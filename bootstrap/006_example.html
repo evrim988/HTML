@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form ve Tablo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Sayfanın içeriğini ortalamak ve maksimum genişliği kontrol etmek için container */
+        .container {
+            max-width: 2000px;
+        }
+        
+        /* Sabit boyutları koruma ve kenarlık için ayar */
+        .red-border {
+            border: 1px solid red;
+            padding: 15px;
+            border-radius: 5px;
+            min-width: 300px;
+            min-height: 150px;
+        }
+        
+        /* Tablo stil ayarları */
+        table {
+            table-layout: fixed; /* Sabit kolon genişlikleri için */
+            width: 100%; /* Tüm genişliği kapla */
+        }
+        table td, table th {
+            border: 1px solid #ddd;
+            text-align: center; /* Metni ortala */
+        }
+        
+        /* Modal boyutlandırma ayarları */
+        .modal-dialog {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Responsive font ayarları */
+        body {
+            font-size: 16px; /* Varsayılan font boyutu */
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px; /* Küçük ekranlar için daha küçük font */
+            }
+        }
+        .table-success{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col">
+                <div class="red-border">
+                    <label for="name" class="form-label">Adınızı giriniz</label>
+                    <input type="text" id="name" class="form-control" placeholder="Adınız">
+                    <label for="surname" class="form-label mt-3">Soyadınızı giriniz</label>
+                    <input type="text" id="surname" class="form-control" placeholder="Soyadınız">
+                    <label for="address" class="form-label mt-3">Adres giriniz</label>
+                    <input type="text" id="address" class="form-control" placeholder="Adres bilgileriniz">
+                </div>
+            </div>
+            <div class="col">
+                <div class="red-border">
+                    <label for="age" class="form-label">Yaşınız</label>
+                    <input type="number" id="age" class="form-control" placeholder="Yaşınızı giriniz">
+                </div>
+            </div>
+            <div class="col d-flex align-items-center">
+                <button id="addBtn" class="btn btn-primary w-100">Ekle</button>
+            </div>
+        </div>
+
+        <table class="table table-bordered mt-4 table-striped table-success table-hover">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Ad Soyad</th>
+                    <th>Adres</th>
+                    <th>Yaş</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Dinamik olarak eklenecek satırlar buraya gelecek -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Müşteriyi Güncelle Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Müşteriyi Güncelle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="editName" class="form-label">Adınız</label>
+                    <input type="text" id="editName" class="form-control">
+                    <label for="editSurname" class="form-label mt-3">Soyadınız</label>
+                    <input type="text" id="editSurname" class="form-control">
+                    <label for="editAddress" class="form-label mt-3">Adres</label>
+                    <input type="text" id="editAddress" class="form-control">
+                    <label for="editAge" class="form-label mt-3">Yaş</label>
+                    <input type="number" id="editAge" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal Et</button>
+                    <button type="button" class="btn btn-primary" id="updateBtn">Güncelle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let idCounter = 1;
+        let editRow = null;
+
+        document.getElementById('addBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const address = document.getElementById('address').value;
+            const age = document.getElementById('age').value;
+
+            if (name && surname && address && age) {
+                const tableBody = document.getElementById('tableBody');
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${idCounter++}</td>
+                    <td>${name} ${surname}</td>
+                    <td>${address}</td>
+                    <td>${age}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove()">X</button>
+                        <button class="btn btn-primary btn-sm" onclick="editRowFunc(this)">Edit</button>
+                    </td>
+                `;
+                tableBody.appendChild(newRow);
+
+                document.getElementById('name').value = '';
+                document.getElementById('surname').value = '';
+                document.getElementById('address').value = '';
+                document.getElementById('age').value = '';
+            } else {
+                alert("Lütfen tüm alanları doldurun!");
+            }
+        });
+
+        function editRowFunc(button) {
+            console.log(button);
+            editRow = button.parentElement.parentElement;
+            const fullName = editRow.cells[1].innerText.split(' ');
+            document.getElementById('editName').value = fullName[0];
+            document.getElementById('editSurname').value = fullName[1];
+            document.getElementById('editAddress').value = editRow.cells[2].innerText;
+            document.getElementById('editAge').value = editRow.cells[3].innerText;
+
+            new bootstrap.Modal(document.getElementById('editModal')).show();
+        }
+
+        document.getElementById('updateBtn').addEventListener('click', function() {
+            const editName = document.getElementById('editName').value;
+            const editSurname = document.getElementById('editSurname').value;
+            const editAddress = document.getElementById('editAddress').value;
+            const editAge = document.getElementById('editAge').value;
+
+            if (editName && editSurname && editAddress && editAge) {
+                editRow.cells[1].innerText = `${editName} ${editSurname}`;
+                editRow.cells[2].innerText = editAddress;
+                editRow.cells[3].innerText = editAge;
+
+                bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
+            } else {
+                alert("Lütfen tüm alanları doldurun!");
+            }
+        });
+    </script>
+</body>
+</html>

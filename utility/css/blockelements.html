@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    -> Blok öğeler tam genişliği kaplayarak satırın tamamını işgal eder ve kendisinden sonra gelen öğeyi yeni bir satıra kaydırır.
+    -> Genişlik (width), yükseklik (height), iç boşluk (padding) ve dış boşluk (margin) özelliklerini destekler.
+    -> En yaygın blok elemanları <div>, <h1>, <p>, <ul>, <li> gibi elemanlardır.
+    -->
+    <div style="display: block; width: 200px; background-color: lightblue;">
+        Bu bir blok öğesidir.
+    </div>
+    <div style="display: block; width: 200px; background-color: lightgreen;">
+        Bu da başka bir blok öğesidir.
+    </div>
+
+    <!--
+    -> İnline öğeler, içeriği kadar yer kaplar ve yanında başka elemanlara izin verir. Bir satırı tamamen işgal etmez, aynı satırda başka öğelerle yan yana olabilir.
+    -> Genişlik veya yükseklik ayarlaması yapılamaz.
+    -> İç boşluk (padding) ve dış boşluk (margin) özellikleri sınırlıdır ve genellikle dikey olarak uygulanamaz.
+    -> En yaygın inline elemanlar <span>, <a>, <img>, <strong>, <em> gibi elemanlardır.    
+    -->
+
+    <span style="display: inline; color: blue;">Bu bir inline öğedir.</span>
+    <span style="display: inline; color: red;">Bu da başka bir inline öğedir.</span>
+
+    <!--
+    -> İnline-block öğeler, hem inline hem de block özelliklerinden faydalanır.
+    -> Aynı satırda başka elemanlarla yan yana olabilir, ancak genişlik ve yükseklik gibi özellikler verilebilir.
+    -> Blok elemanların esnekliğini sağlar ama inline öğeler gibi yan yana yerleştirilebilir.
+    -->
+
+    <div style="display: inline-block; width: 100px; height: 50px; background-color: lightcoral;">
+        Bu bir inline-block öğedir.
+    </div>
+    <div style="display: inline-block; width: 100px; height: 50px; background-color: lightseagreen;">
+        Bu da başka bir inline-block öğedir.
+    </div>
+
+    <!--
+    Kısaca:
+    -> Block: Tüm satırı kaplar, genişlik/yükseklik uygulanabilir.
+    -> Inline: İçeriği kadar yer kaplar, aynı satırda kalır, genişlik/yükseklik uygulanamaz.
+    -> Inline-block: Aynı satırda kalabilir, genişlik/yükseklik uygulanabilir.
+    -->
+    
+</body>
+</html>

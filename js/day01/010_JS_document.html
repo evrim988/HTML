@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root{
+            border: 1px green solid;
+            width: 100%;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script>
+
+        /**
+         * document, üzerinde işlem yaptığınız web sayfasını ifade eder ve bununla sayfayı yönetebilirsiniz.
+         * mesela var olan bir nesneyi manipüle edebilirsiniz.
+         * Bir bileşeni seçmek için -> getElementBy 
+         * ---- id, class, tagName gibi ifadelerle html elementini seçmiş olduk. 
+        */
+
+        //bir elementi seçmek ve bir değişkene atamak.
+        const divRoot = document.getElementById('root');
+
+        //yeni bir element yaratmak
+        const aramaButonu = document.createElement('button');
+
+        //elementin değerlerini değiştirmek
+        aramaButonu.innerText = 'Arama Butonu';
+
+        //seçmiş olduğumuz div elementin içerisine bir butonu eklemiş olduk.
+        divRoot.appendChild(aramaButonu); 
+
+    </script>
+</body>
+</html>

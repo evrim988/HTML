@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Tüm browserlar da lokal olarak verileri saklayabilen bir DB
+         * gibi düşünebileceğiniz alanlar vardır. Bunlar bizim kullanımlarımızda
+         * iki kısıma ayrılır.
+         * 1- LocalStorage
+         * browser ın terel DB si gibi düşünersek browser silinmedikçe ya da 
+         * tüm verileri özellikle temizlenmedikçe bu kayıtlar üzerinde tutulur.
+         * 
+         * 2- SessionStorage
+         * bir internet sitesine yapılan istek sonucunda açılan sayfa için
+         * bir oturum oluşur ve kapatılıncaya kadar yaşamına devam eder. 
+         * Bu süreçte session için bir sessionStorage DB oluşur ve buraya bilgiler
+         * kayıt edilebilir. Otomatik olarak sayfa kapandığında bilgiler silinir.
+        */
+
+        console.log(localStorage);
+        localStorage.setItem('name','evrim');
+        localStorage.setItem('sdfds','sdfgggh');
+        console.log(localStorage);
+        
+        localStorage.removeItem('sdfds'); 
+        console.log(localStorage);
+        
+    </script>
+</body>
+</html>

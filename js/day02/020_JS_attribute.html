@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags attribute</title>
+    <style>
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: antiquewhite;
+            padding: 10px;
+            height: 100px;
+        }
+
+        .form-element {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<body>
+    <div class="row">
+        <label id="message">Muhammet Hoca ile JS Dersleri</label>
+    </div>
+    <div class="form-element">
+        <button onclick="renkDegistir()">Değiştir</button>
+    </div>
+    <script>
+        const lblMesaj = document.getElementById('message');
+        function renkDegistir() {
+            if (lblMesaj.style.color !== 'red')
+                lblMesaj.style.color = 'red';
+            else
+                lblMesaj.style.color = 'green'
+        }
+        /**
+         * değiştir metodunu biz tetikelemeden çalışsın istiyorum.
+         * bu da -> interval, belli aralıklarla yapılacak işleri tanımlar.
+        */
+        setInterval(() => {
+            renkDegistir();
+        }, 500)
+
+        /**
+         * timeout, belli bir süre bekledikten sonra yapılacak işleri tanımlar.
+        */
+        setTimeout(() => {
+            swal("Good job!", "You clicked the button!", "success");
+        }, 3000);
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Listesi</title>
+    <style>
+        .container {
+            border: 1px red solid;
+            display: flex;
+            flex-direction: column;
+            height: 85vh;
+        }
+
+        .header {
+            border: 1px blue solid;
+            display: flex;
+            flex-direction: row;
+            min-height: 10vh;
+            margin: 10px;
+            border-radius: 20px;
+        }
+
+        .body {
+            border: 1px green solid;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: 12;
+            height: 70vh;
+            margin: 10px;
+            border-radius: 20px;
+            overflow: scroll;
+        }
+
+        .col-1 {
+            flex: 1;
+        }
+
+        .col-2 {
+            flex: 2;
+        }
+
+        .col-3 {
+            flex: 3;
+        }
+
+        .col-4 {
+            flex: 4;
+        }
+
+        .col-5 {
+            flex: 5;
+        }
+
+        .col-6 {
+            flex: 6;
+        }
+
+        #txtSearch {
+            margin: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px gray solid;
+            flex: 6;
+        }
+
+        .btn {
+            margin: 15px;
+            flex: 2;
+            border-radius: 15px;
+            border: 1px solid blueviolet;
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: rgb(180, 105, 249);
+            color: black;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            border: 1px burlywood solid;
+            height: 45vh;
+            border-radius: 10px;
+            margin: 4px;
+        }
+
+        .img-avatar {
+            margin: 5px;
+            border-radius: 50%;
+            border: 1px lightgray solid;
+        }
+
+        label {
+            border-bottom: 1px lightgray solid;
+            margin-left: 1%;
+            padding: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <input type="text" id="txtSearch">
+            <button class="btn">Ara</button>
+        </div>
+        <div class="body" id="body">
+
+        </div>
+    </div>
+
+    <script>
+
+        const bodyDiv = document.getElementById('body');
+
+        fetch('https://randomuser.me/api/?results=6')
+            .then(data => data.json())
+            .then(res => {
+                bodyDiv.innerHTML = '';
+
+                res.results.forEach(user => {
+                    bodyDiv.innerHTML += `
+                    <div class="card col-3" target="_blank">
+                        <img class="img-avatar" src="${user.picture.large}" alt="">
+                        <label class="lblName">${user.name.first + ' ' + user.name.last}</label>
+                        <label class="lblAddress">${user.location.city}</label> 
+                        <label class="lblPhone">${user.phone}</label>
+                    </div>
+                `;
+                });
+            })
+
+    </script>
+</body>
+
+</html>

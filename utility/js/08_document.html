@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root{
+            border: 1px red solid;
+            width: 100%;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+
+        /**
+         * document nedir?
+         * üzerinde işlem yaptığınız web sayfasını (body içerisindeki) ifade eder ve bununla sayfayı yönetebilirsiniz.
+         * 
+         * meselavar olan bir nesneyi manipüle etmek için; 
+         * bir bileşeni seçmek için;
+         * -> getElementBy
+         *      -> id, class, tagName... gibi ifadelerle html elementini seçmiş oluruz.
+        */
+
+        //Bir elemneti seçelim ve bir değişkene atayalım.
+        const div = document.getElementById('root');
+
+        //yeni bir element yaratalım.
+        const button = document.createElement('button');
+        console.log(button); //<button></button> şeklinde çıktı vermiş olur.
+        
+        //oluşturduğumuz elementin değerini değiştirelim.
+        button.innerText = 'Arama Butonu';
+
+        //yukarıda seçmiş olduğumuz div elementinin içerisine butonu ekleyelim.
+        div.appendChild(button);
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün İşlemleri</title>
+    <style>
+        .urun-giris{
+            border: 1px red solid;
+            padding: 3px;
+        }
+        .urun-listesi{
+            border: 1px red solid;
+            margin-top: 5px; /*bir üst div ile ayırdık.(üstten)*/
+            text-align: center;
+        }
+        /*center, mb-3, mt-3 classa ek olarak kullanılıyor.*/
+        .center{
+            text-align: center;
+        }
+        .mb-3{
+            margin-bottom: 3px;
+        }
+        .mt-3{
+            margin-top: 5px;
+        }
+        .form-label{
+            /*default olarak inline olduğu için genişlik verdiğimde label etkilemeyecekti.
+            çünkü inline ögeler genişlik veya yükseklik gibi özelliklere cevap vermez.
+            inline-block olduğunda bu duruma karşışık verir ve aynı satırda kalmasını sağlıyoruz.*/
+            display: inline-block;
+            min-width: 120px;
+            text-align: left;
+        }
+        .form-input{
+            display: inline-block;
+            min-width: 20%;
+            min-height: 5%;
+            border-radius: 4px;
+            border-color: lightgray; /*input kenarlık rengi.*/
+            /*input kenarlıklarındaki siyah çizgilerin kalınlığını azalttım.*/
+            border-width: 0.5px;
+        }
+        .btn{
+           border: 1px blueviolet solid;
+           width: 15%; /*sayfanın büyüklüğüne göre genişlik verdik.*/
+           padding: 5px;
+           background-color: blueviolet;
+           color: white;
+           border-radius: 5px;
+           margin-left: 4%; 
+        }
+        .content{
+            display: inline-block;
+            padding: 5px;
+            min-height: 80px;
+            width: 20%;
+            margin-top: 10px;
+        }
+        .user-card{
+            border: 1px lightgray solid;
+            min-height: 400px; /*resim boyutları 200/200 olduğu için yükseliği geniş tuttum.*/
+            border-radius: 10px;
+            text-align: left;
+        }
+        .user-card:hover{
+            box-shadow: -1px 12px 26px -17px rgba(0,0,0,0.75);
+        }
+        .user-image{
+            width: 100%;
+            border-radius: 5px;
+        }
+        .company-text{
+            display: inline-block;
+            background-color: rgb(224, 192, 255);
+            color: rgb(108, 2, 207);
+            font-weight: bold;
+            font-size: 13px;
+            border-radius: 4px;
+            margin: 5px;
+            padding: 3px;
+        }
+        .product-text{
+            display: inline-block;
+            color: rgb(118, 118, 118);
+            margin-left: 5px;
+            font-size: 14px;
+        }
+        .price-text{
+            display: inline-block;
+            margin: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="urun-giris">
+        <div class="center mb-3 mt-3">
+            <label class="form-label">Ürün Adı:</label>
+            <input class="form-input" type="text" placeholder="Ürün Adını Giriniz...">
+        </div>
+        <div class="center mb-3 mt-3">
+            <label class="form-label">Ürün Açıklaması:</label>
+            <input class="form-input" type="text" placeholder="Ürün Açıklamasını Giriniz...">
+        </div>
+        <div class="center mb-3 mt-3">
+            <label class="form-label">Ürün Fiyatı:</label>
+            <input class="form-input" type="text" placeholder="Ürün Fiyatını Giriniz...">
+        </div>
+        <div class="center mb-3 mt-3">
+            <button class="btn">KAYDET</button>
+        </div>
+    </div>
+    <div class="urun-listesi">
+        <div class="content">
+            <div class="user-card">
+                    <img src="https://picsum.photos/200/200" class="user-image">
+                <div>
+                    <label class="company-text">3 ay sonra taksitle öde</label>
+                </div>   
+                <div>
+                    <label class="product-text">Asus Monitör 32"</label>
+                </div>  
+                <div>
+                    <label class="price-text">6.999₺</label>
+                </div>
+                   
+            </div>
+        </div>
+        <div class="content">
+            <div class="user-card">
+                <img src="https://picsum.photos/200/200" class="user-image">
+                <div>
+                    <label class="company-text">3 ay sonra taksitle öde</label>
+                </div>   
+                <div>
+                    <label class="product-text">Asus Monitör 32"</label>
+                </div>  
+                <div>
+                    <label class="price-text">6.999₺</label>
+                </div>
+                   
+            </div>
+        </div>
+        <div class="content">
+            <div class="user-card">
+                <img src="https://picsum.photos/200/200" class="user-image">
+                <div>
+                    <label class="company-text">3 ay sonra taksitle öde</label>
+                </div>   
+                <div>
+                    <label class="product-text">Asus Monitör 32"</label>
+                </div>  
+                <div>
+                    <label class="price-text">6.999₺</label>
+                </div>
+                   
+            </div>
+        </div>
+        <div class="content">
+            <div class="user-card">
+                <img src="https://picsum.photos/200/200" class="user-image">
+                <div>
+                    <label class="company-text">3 ay sonra taksitle öde</label>
+                </div>   
+                <div>
+                    <label class="product-text">Asus Monitör 32"</label>
+                </div>  
+                <div>
+                    <label class="price-text">6.999₺</label>
+                </div>
+                   
+            </div>
+        </div>
+    </div>
+</body>
+</html>

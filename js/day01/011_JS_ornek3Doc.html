@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+
+        label {
+            color: red;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input onchange="getAd()" type="text" id="ad" placeholder="adınız"><br>
+        <label id="lblAd"></label>
+        <br>
+    </div>
+    <div>
+        <textarea type="text" id="adres" placeholder="adresiniz"></textarea>
+    </div>
+    <div>
+        <button onclick="uyeKayit()">Kaydet</button>
+    </div>
+    <div>
+        <label id="aciklama"></label>
+    </div>
+
+    <script>
+        //bu sayfadan id si "ad" olan elementi al demiş olduk. 
+        const txtAd = document.getElementById('ad');
+        const txtAdres = document.getElementById('adres');
+        const lblAciklama = document.getElementById('aciklama');
+        const lblAd = document.getElementById('lblAd');
+
+        function getAd(){
+            lblAd.innerText = txtAd.value;
+        }
+
+        function uyeKayit() {
+            let metin = 'kayıt başarılı, ad: ' + txtAd.value + ' / ' + ' adres: ' + txtAdres.value;
+            lblAciklama.innerText = metin; //method tetiklendiğinde inputların içerisindeki değerleri alacak ve label ın içerisine yazamış olucak.
+        }
+
+    </script>
+</body>
+
+</html>

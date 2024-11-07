@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin-bottom: 5px;
+        }
+        label{
+            display: block;
+            margin-bottom: 3px;
+            font-weight: bolder;
+        }
+        input{
+            width: 160px;
+            padding: 5px;
+        }
+        button{
+            height: 30px;
+            width: 160px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+        <h1 style="font-weight: bolder;">Kullanıcı Kayıt Formu</h1>
+        <div>
+            <label for="name">Adınız:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div>
+            <label for="surname">Soyadınız:</label>
+            <input type="text" name="surname" id="surname" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="username">Kullanıcı Adınız:</label>
+            <input type="text" name="username" id="username" required>
+        </div>
+        <div>
+            <label for="password">Şifreniz:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+            <button onclick="register()" type="submit">Kayıt Ol</button>
+        </div>
+        <!--Bu sefer butona bastığımızda javascript çalışır ve karşı tarafa jspn türünde veri göndermiş oluruz.-->
+        <script>
+            const name = document.getElementById('name')
+            const surname = document.getElementById('surname')
+            const email = document.getElementById('email')
+            const username = document.getElementById('username')
+            const password = document.getElementById('password')
+
+            function register(){
+                fetch('http://localhost:9090/v1/dev/user/register',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type':'application/json'
+                        },
+                        body: JSON.stringify({
+                            'name': name.value,
+                            'surname': surname.value,
+                            'email': email.value,
+                            'username': username.value,
+                            'password': password.value
+                        })
+                    }
+                ).then(data => console.log(data))
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Operatörler</title>
+</head>
+<body>
+    <script>
+        
+        let s1 = 4;
+        let s2 = 567;
+        console.log('toplam...: ' , (s1 + s2)); 
+
+        let toplam = 0;
+        toplam += s1;
+        toplam++;
+        let dogruMu = toplam >= s1 || s2 < 100; 
+        console.log('doğru mu: ', dogruMu)
+
+        /*
+        * işlem opertaörleri;
+        * +, -, *, /, %
+        * 
+        * görev atama;
+        * =, +=, /=, *=, -=, %=
+        * 
+        * mantık operatörleri
+        * &&, ||, !(değil)
+        * 
+        * ilişki operatörleri;
+        * <, >, <=, >=, ==, === ( == ile === arasındaki fark nedir)
+        * 
+        * ++[], --[], []++, []--
+        * 
+        * == ile === arasındaki fark nedir ?
+        * == -> gevşek eşitlik - tip dönüşümü yapar.
+        * === -> katı eşitlik - tip dönüşümü yapmadan kontrol sağlar.
+        * 5 == '5' kontrol edilirken tip dönüşümü yapar. true
+        * 5 === '5' false
+        */
+        console.log("5 == '5' ", (5 == '5'));
+        console.log("5 === '5' ", (5 === '5'));
+
+    </script>
+</body>
+</html>

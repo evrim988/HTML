@@ -1,0 +1,20 @@
+
+h2{
+    color: cadetblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+.mainP{
+    color: coral;
+}
+.contentP{
+    color: blueviolet;
+}
+/*body nin içerisindeki bileşenleri yönetmek için kullanılır.
+h2 -> body içerisinde ki tüm h2 etiketlerine uygular.
+özeliklerini değiştirmek istediğimiz etikete class verdiğimizde gelip onu şu şekilde kullanabilriz.
+.mainP{
+}
+h1 nin içine yazdığımız özellikler, burada h1 e ait özellik yazsak bile onu ezer ve içine  yazılan özellikleri kullanır.
+style içerisinde ki kodları css dosyasının içerisine aldık.
+*/

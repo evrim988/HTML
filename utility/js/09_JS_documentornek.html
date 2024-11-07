@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 5px;
+        }
+
+        label {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <label>----------------Kullanıcı Kayıt Formu-------------------------</label>
+
+        <div>
+            <div>
+                <label for="ad">Adınızı Giriniz:</label>
+            </div>
+            <div>
+                <input type="text" name="ad" id="ad">
+            </div>
+            <div>
+                <label for="soyad">Soyadınızı Giriniz:</label>
+            </div>
+            <div>
+                <input type="text" name="soyad" id="soyad" >
+            </div>
+            <div>
+                <label for="username">Kullanıcı Adınız:</label>
+            </div>
+            <div>
+                <input type="text" name="username" id="username" >
+            </div>
+            <div>
+                <label for="password">Parolanızı Giriniz:</label>
+            </div>
+            <div>
+                <input type="password" name="password" id="password" >
+            </div>
+            <div>
+                <button onclick="uyeKayit()">Kayıt Ol</button>
+            </div>
+            <div>
+                
+                <label id="aciklama"></label>
+            </div>
+        </div>
+        
+        <script>
+            //div içerisinde olan elementleri seçelim.
+            const ad = document.getElementById('ad');
+            const soyad = document.getElementById('soyad');
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            const aciklama = document.getElementById('aciklama');
+
+            function uyeKayit(){
+                let metin = 'kaydınız başarılı \n' +
+                'Adınız: ' + ad.value + '\n' +
+                'Soyadınız: ' + soyad.value + '\n' +
+                'Kullanıcı Adınız: ' + username.value + '\n' +
+                'parolanız: ' + password.value;
+                aciklama.innerText = metin;
+            }
+
+        </script>
+    </body>
+</body>
+</html>

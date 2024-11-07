@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+
+        var urun = {
+            id: 1,
+            ad: 'şeker',
+            fiyat: 34,
+            stok: 100
+        }
+        console.log(urun);
+        console.log('ürün adı...: ' , urun.ad);
+        console.log('ürün fiyat...: ', urun.fiyat);
+
+        let musteriList = [
+            {
+                id: 5,
+                ad: 'ahmet',
+                adres: 'Ankara',
+                iletisim: {
+                    ad: 'Ev Adresi',
+                    adres: 'Ankara da bir yer',
+                    telefon: '0 555 66998'
+                }
+            },
+            {
+                id: 78,
+                ad: 'Deniz',
+                adres: 'Denizli'
+            }
+        ];
+
+        console.log('1. müşterinin adı...: ', musteriList[0].ad);
+        console.log('2. müşterinin adı...: ', musteriList[1].ad);
+        console.log('1. müşterinin telefon numarası...: ', musteriList[0].iletisim.telefon);
+        console.log('2. müşterinin telefon numarası...: ', musteriList.iletisim?.telefon); //2. müşterinin iletişim bilgileri olmadığı için hata almamak için iletişimin yanına soru işareti koymuş olduk.
+        
+        
+        
+        //süslü parantez object olduğunu belirtir.
+        //köşeli parantez dizi olduğunu belirtir.
+        //köşeli parantez içerisinde süslü parantez object array olduğunu belirtir.
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript İle Diziler</title>
+</head>
+
+<body>
+    <script>
+
+        const aracListesi = ['BMW', 'Audi', 'Mercedes', 'Volvo', 'Tesla'];
+        console.log(aracListesi); //dizinin çıktısını verir.
+
+        //Diziye eleman ekleyelim. (Sonuna eklemiş oldu)
+        let sonuc = aracListesi.push('Mini Cooper');
+        console.log(aracListesi);
+
+        //Dizinin başından eleman silelim. (Sildiği elemanı geriye döner.)
+        sonuc = aracListesi.shift();
+        console.log('shift işleminin sonucunda dönen değer...: ', sonuc);
+        console.log(aracListesi);
+
+        //Dizinin en başına eleman ekleyelim. (eklediği eleman ile beraber dizinin uzunluğunu geri döner.)
+        sonuc = aracListesi.unshift('Jaguar');
+        console.log('unshift işleminin sonucunda dönen değer...: ', sonuc);
+        console.log(aracListesi);
+
+        //Dizinin sonundan eleman silelim. (sildiği elemnaı geriye döner.)
+        sonuc = aracListesi.pop();
+        console.log('pop işleminin sonucundan dönen değer...: ', sonuc);
+        console.log(aracListesi);
+
+        //Diziyi A-Z ye doğru sıralayalım.
+        aracListesi.sort();
+        console.log(aracListesi);
+
+        //Diziyi tersten sıralayım.
+        aracListesi.reverse();
+        console.log(aracListesi);
+
+        //Dizideki aranan indexdeki elemanı getirelim.
+        let eleman = aracListesi[1];
+        console.log("Dizinin 1.elemanı...: ", eleman);
+
+        //Dizideki aranılan elemanın index değerini geri dönelim.(Bulamadıysa -1 döner.)
+        let findIndex = aracListesi.indexOf('Jaguar');
+        console.log("Arnana elemanın index numarası...: ", findIndex);
+
+        //Dizinin içerisindeki değerleri okuyalım. (Dizinin her bir elemanını geri döner.)
+        for (let i = 0; i < aracListesi.length; i++) {
+            console.log(aracListesi[i]);
+        }
+
+        console.log("--------------Foreach Kullanımı----------------");
+
+        //Dizinin içerisindeki değerleri foreach ile okuyalım.
+        aracListesi.forEach(arac => {
+            console.log(arac);
+
+        });
+
+        console.log("-----------Map Kullanımı------------------");
+        aracListesi.map(arac => {
+            console.log(arac);
+        }); //foreach ile aynı çıktıyı verir.
+
+        //map -> bir dizi içerisindeki dataları dolaşmak için kullanılır.
+        //her bir data için değer dönüşü sağlayabilir.
+        
+        console.log("-----------Map Kullanımı------------------");
+
+        let yeniDizi = aracListesi.map(arac => {
+            console.log(arac);
+            if(arac.includes('i'))
+                return 'data...: ' + arac
+            return arac
+        });
+
+        //dizinin içerisinde a harfi içeren bir değer var ise geriye döner. Yoksa boş bir dizi döner.
+        console.log("--------Filter Kullanımı------------------");
+        let filterArray = yeniDizi.filter(marka => marka.includes('a'));
+        console.log('a harfi olan araçlar...: ', filterArray);
+        
+
+    </script>
+</body>
+
+</html>

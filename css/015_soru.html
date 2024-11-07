@@ -1,0 +1,87 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayfa Düzeni</title>
+    <style>
+        .container{
+            border: 2px red solid;
+            height: 90vh;
+            text-align: center;
+        }
+        .header{
+            display: inline-block;
+            border: 1px blue solid;
+            height: 20vh;
+            margin: 2%;
+            width: 80%;
+            border-radius: 10px;
+           
+        }
+        .content{
+            height: 71vh;
+            display: flex;
+            flex-direction: row;
+        }
+        .side-menu{
+            border: 1px green solid;
+            height: 60vh;
+            flex: 3;
+            border-radius: 10px;
+            margin: 2px;
+        }
+        .content-body{
+            border: 1px blueviolet solid;
+            border-radius: 10px;
+            height: 60vh;
+            flex: 9;
+            margin: 2px;
+        }
+        li{
+            list-style-type: none;
+            text-align: left;
+            margin: 0px;
+            padding: 3px 8px;
+            font-size: small;
+            margin-bottom: 3px;
+            margin-left: 5px;
+            padding-left: 5px;
+        }
+        ul{
+            padding-inline-start: 3px;
+        }
+        span{
+            margin-left: 5px;
+            color: #bb9303;
+            font-weight: bold;
+        }
+        li:hover{
+            background-color: antiquewhite;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="content">
+            <div class="side-menu">
+                <ul>
+                    <li><i class="fa-solid fa-house"  style="color: #FFD43B;"></i><span>Ana Sayfa</span></li>
+                    <li><i class="fa-solid fa-users"  style="color: #FFD43B;"></i><span>Müşteri Listesi</span></li>
+                    <li><i class="fa-solid fa-table-list"  style="color: #FFD43B;"></i><span>Ürün Listesi</span></li>
+                    <li><i class="fa-solid fa-truck"  style="color: #FFD43B;"></i><span>Kargolar</span></li>
+                    <li><i class="fa-solid fa-users-viewfinder" style="color: #FFD43B;"></i><span>Kullanıcı Listesi</span></li>
+                </ul>
+            </div>
+            <div class="content-body">
+                <div class="body"></div>
+                <div class="footer"></div>
+            </div>
+            
+        </div>
+      
+    </div>
+</body>
+</html>

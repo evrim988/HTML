@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript ile Object Kavramı</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * Object nedir?
+         * Objeler, içerisinde birden farklı veri türünü içeren, 
+         * yazılımcı tarafından oluşturulan daha komplike veri türleridir. 
+         * İçerisinde farklı veri türleri tutabildiği gibi, 
+         * farklı objeleri de tutabilmektedir.
+         * “anahtar: değer” çiftleri biçiminde, ilkel veya referans türlerinin ilgili verilerin sıralanmamış bir koleksiyonu olarak tanımlanabilir
+        */
+
+        var urun = {
+            id: 1,
+            ad: 'Bilgisayar',
+            fiyat: 35000,
+            stok: 20
+        }
+        console.log(urun); //object olarak çıktı verdi.
+        
+        //ürünün adını getirelim.
+        console.log("ürünün adı...: ", urun.ad);
+        
+        //ürünün fiyatı getirelim.
+        console.log("ürünün fiyatı...: ", urun.fiyat);
+
+        //objectArray kavramımız var. oda şöyle tanımlanıyor.
+        let musteriList = [
+            {
+                id: 1,
+                ad: 'Evrim',
+                adres: 'Bursa',
+                iletisim: {
+                    ad: 'Ev Adresi',
+                    adres: 'Bursa/Nilüfer',
+                    telefon: '0588 741 5632'
+                }
+            },
+            {
+                id: 2,
+                ad: 'Selim',
+                adres: 'Londra'
+            }
+        ];
+        console.log('1. müşterinin adı...: ', musteriList[0].ad);
+        console.log('2. müşterinin adı...: ', musteriList[1].ad);
+        console.log('1. müşterinin telefon numarası...: ', musteriList[0].iletisim.telefon);
+        console.log('2. müşterinin telefon numarası...: ', musteriList[1].iletisim?.telefon);
+        
+        
+        
+    </script>
+</body>
+</html>

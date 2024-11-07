@@ -1,0 +1,144 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            height: 95vh;
+            border: 2px solid red;
+
+        }
+        .column {
+            border: 1px green solid;
+            margin: 10px;
+            border-radius: 10px;
+            
+        }
+        .content{
+            border: 1px black solid;
+            margin: 15px;
+        }
+        .box-container{
+            display: flex;
+            flex-wrap: wrap; /* genişliği doldurdukça aşağı kaysın*/
+            width: 100%;
+        }
+        .box{
+            border: 1px gray solid;
+            height: 200px;
+            margin: 8px;
+        }
+        .col-1{
+            /*Birinci 0 -> kutunun esnemeyeceğini bildirir.
+              İkinci 0 -> kutunun küçülmeyeceğini bildirir.
+              Üçüncü 8.33% -> tam container genişliğinin yüzdesel olarak ne kadar alanını
+              kaplayacağını bildirir.
+            */
+            flex: 0 0 8.33%;
+        }
+        .col-2{flex: 0 0 16.66%;}
+        .col-3-1{flex: 0 0 25%;}
+        .col-4{flex: 0 0 33.33%;}
+        .col-5{flex: 0 0 41.66%;}
+        .col-6{flex: 0 0 50%;}
+        .col-7{flex: 0 0 58.33%;}
+        .col-8{flex: 0 0 16.66%;}
+        .col-9-1{flex: 0 0 66.66%;}
+        .col-10{flex: 0 0 83.33%;}
+        .col-11{flex: 0 0 91.66%;}
+        .col-12{flex: 0 0 100%;}
+
+        .col-3{
+            flex: 3;
+        }
+        .col-9{
+            flex: 9;
+        }
+
+        /*ekranın genişliğini alabiliyoruz burda*/
+        @media(min-width: 576px){
+            .col-sm-6{
+                flex: 0 0 50%;
+            }
+            .col-sm-12{
+                flex: 0 0 100%;
+            }
+        }
+
+        @media(min-width: 768px){
+            .col-md-3{
+                flex: 0 0 25%;
+            }
+            .col-md-6{
+                flex: 0 0 50%;
+            }
+            .col-md-12{
+                flex: 0 0 100%;
+            }
+        }
+
+        @media(min-width: 992px){
+            .col-lg-2{
+                flex: 0 0 16.16%;
+            }
+            .col-lg-3{
+                flex: 0 0 25%;
+            }
+            .col-lg-6{
+                flex: 0 0 50%;
+            }
+            .col-lg-12{
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="column col-3">
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+            </div>
+            <div class="column col-9">
+                <div class="class box-container">
+                    <!--Ekran genişliği daraldıkça şu kadar küçült demiş olduk kutular için.Responsive tasarım yapmış olduk.-->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="box"></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="box"></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="box"></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="box"></div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box"></div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box"></div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box"></div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box"></div>
+                    </div>
+                  
+                    
+
+                </div>
+            </div>
+
+    </div>
+</body>
+</html>

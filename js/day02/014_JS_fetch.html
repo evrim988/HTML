@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /**
+         * GET isteği
+         * nasıl gönderilir?
+         * request: fetch('https://randomuser.me/api/?results=5')
+         * response: then([Data bilgisi gelir])
+         * 
+         * NOT!! gelen data text olarak gelir, dönüştürmek için;
+         * .then(data => data.json())
+         * 
+         * gelen datayı kullanmak;
+         * .then(res => {buraya kodlar gelecek.})
+         * .then(result => console.log(result));
+         * 
+         * hata oluşursa:
+         * .catch(hata => {hata oluşursa kodlar})
+         * catch => java da ki try-catch mantığı gibi...
+         * 
+         * fetch işleminden sonra yapılacaklar için:
+         * .finally(() => {yapılacak kodlar.})
+         * 
+         * !!Dikkat etmemiz gereken hususlar!!
+         * fetch isteği asenkron bir işlemdir, bu nedeniyle kod akışını bozabilir. Buna göre kodlama yapmak gerekir.
+         * 
+         * asenkron nedir?
+         * kendi başına çalışabilen kodlardır.
+         * 
+        */
+        let gelenKullaniciSayisi = 0;
+        console.log('fetch isteği başladı');
+        fetch('https://randomuser.me/api/?results=5')
+            .then(neGelmis => neGelmis.json())
+            .then(result => {
+                console.log(result.info.results)
+                gelenKullaniciSayisi = result.info.results;
+                console.log('gelen kullanıcı sayısı...: ', gelenKullaniciSayisi);
+            })
+            .catch(() => console.log('bir hata oluştu'))
+            .finally(()=> console.log('her istekten sonra ben çalışırım.'));
+           
+            
+
+    </script>
+</body>
+
+</html>

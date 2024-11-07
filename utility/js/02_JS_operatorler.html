@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatörler</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * işlem operatörleri
+         * toplam -> +
+         * çıkarma -> -
+         * çarpma -> *
+         * bölme -> /
+         * mod alma -> %
+         * 
+         * atama operatörleri
+         * eşittir -> =
+         * topla eşitle -> +=
+         * bölme eşitle -> /=
+         * çarp eşitle -> *=
+         * çıkar eşitle -> -=
+         * mod eşitle -> %=
+         * 
+         * ilişki operatörler
+         * küçüktür -> <
+         * büyüktür -> >
+         * küçük eşit -> <=
+         * büyük eşit -> >=
+         * eşit mi -> ==
+         * eşit mi -> ===
+         * 
+         * arttırma ve azaltma operatörleri
+         * arttırma -> ++[]
+         * azalma -> --[]
+         * arttırma -> []++
+         * azalma -> []--
+         * 
+         * == ile === arasındaki fark nedir?
+         * == operatörü ile iki değişken karşılaştırıldığında, 
+         * değişkenlerin türleri farklı ama değerleri aynı ise sonuç true olacaktır. 
+         * Karşılaştırma === ile yapılırsa iki değişkenin hem türü hem de değeri aynı ise sonuç true olur.
+         * var a = 123;
+         * var a = '123'
+         * if ( a==b ) // Sonuç true çünkü değerler aynı
+         * if ( a===b )  // Sonuç false çünkü değerler aynı ama türler farklı
+        */
+
+        let s1 = 4;
+        let s2 = 5;
+        console.log('toplam...: ', (s1 + s2)); //9 sonucunu verdi.
+
+        let toplam = 0;
+        toplam += s1;
+        toplam++;
+        let dogruMu = toplam >= s1 || s2 < 100; //toplam değeri, s1 değerinden büyük mü veya s1 değeri 100 den küçük mü diye kontrol yapar.
+        console.log('doğru mu: ', dogruMu); //doğru ise true yanlış ise false döner.
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygulama</title>
+    <style>
+        .container{
+            border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+        .form{
+            display: flex;
+            margin: 1%;
+            box-shadow: 4px 6px 15px 1px rgba(0,0,0,0.55);
+        }
+        .form-2{
+            display: flex;
+            flex-direction: column;
+           
+        }
+        .urunekle{
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: white;
+            font-weight: bold;
+            border-color: green;
+            color: green;
+        }
+        .urunekle:hover{
+            background-color: rgb(180, 246, 180);
+        }
+        .urunekle:active{
+            background-color: green;
+            color: white;
+        }
+        .urunlistele{
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: white;
+            font-weight: bold;
+            border-color: blue;
+            color: blue
+        }
+        .urunlistele:hover{
+            background-color: rgb(180, 225, 246);
+        }
+        .urunlistele:active{
+            background-color: blue;
+            color: white;
+        }
+        .content{
+            display: flex;
+            
+        }
+        .selecturun{
+            width: 80%;
+            height: 30px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .inputurun{
+            width: 80%;
+            height: 30px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .lefturuninput{
+            display: flex;
+            flex-direction: column;
+        }
+        .righturuninput{
+            display: flex;
+            flex-direction: column;
+        }
+        .btn{
+            width: 80%;
+            height: 70%;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+        }
+        .btn:hover{
+            background-color: white;
+            color: green;
+        }
+        .btn:active{
+            background-color: rgb(221, 220, 220);
+            color: green;
+        }
+        .btn-submit{
+            justify-content: center;
+            align-items: center;
+        }
+        .bg-color{
+            background-color: rgb(218, 217, 217);
+        }
+        .col-2{
+            flex: 2;
+        }
+        .col-3{
+            flex: 3;
+        }
+        .col-4{
+            flex: 4;
+        }
+        .mr-2{
+            margin: 5px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px brown solid;
+        }
+        td{
+            padding: 3px;
+            text-align: center;
+        }
+        th{
+            padding: 5px;
+            background-color: coral;
+        }
+        tr:nth-child(even){
+            background-color: rgb(245, 163, 128);
+        }
+        tr:hover{
+            background-color: rgb(65, 106, 229);
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form col-2">
+            <div class="form-2 col-2">
+                <button class="urunekle">Ürün Ekle</button>
+                <button class="urunlistele">Ürün Listele</button>
+            </div>
+            <div class="form-2 col-4 bg-color">
+                <div class="content col-4 row">
+                    <div class="col-2 mr-2 lefturuninput">
+                        <input class="inputurun" type="text" placeholder="Ürün adı giriniz">
+                       
+                        <select class="selecturun" placeholder="Ürün adı giriniz">
+                            <option>Marka Seçiniz</option>
+                            <option value="Zara">Zara</option>
+                            <option value="Mavi">Mavi</option>
+                            <option value="LcWaikiki">Lc Waikiki</option>
+                            <option value="Defacto">Defacto</option>
+                        </select>
+
+                        <select  class="selecturun"  placeholder="Ürün adı giriniz">
+                            <option>Model Seçiniz</option>
+                            <option value="mont">Mont</option>
+                            <option value="altgiyim">Alt Giyim</option>
+                            <option value="ustgiyim">Üst Giyim</option>
+                        </select>
+                    </div>
+
+                   <div class="col-2 mr-2 righturuninput">
+
+                    <input class="inputurun" type="text"placeholder="Ürün adı giriniz">
+                    <input class="inputurun" type="text" placeholder="Ürün adı giriniz">
+                   
+                   </div>
+                </div>
+                <div class="content col-2 btn-submit">
+                    <button class="btn ">Ürünü Kaydet</button>
+                </div>
+            </div>
+        </div>
+        <div class="form col-3">
+            <table>
+                <thead>
+                   <tr>
+                        <th>Ürün No</th>
+                        <th>Ad</th>
+                        <th>Marka</th>
+                        <th>Model</th>
+                        <th>Fiyat</th>
+                        <th>Stok Adet</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                        <td>1</td>
+                        <td>Mont</td>
+                        <td>Zara</td>
+                        <td>Üst Giyim</td>
+                        <td>2.500₺</td>
+                        <td>100</td>
+                   </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Pantolon</td>
+                        <td>Mavi</td>
+                        <td>Alt Giyim</td>
+                         <td>1.500₺</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>T-Shirt</td>
+                        <td>Defacto</td>
+                        <td>Üst Giyim</td>
+                        <td>1.000₺</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Mont</td>
+                        <td>Zara</td>
+                        <td>Üst Giyim</td>
+                        <td>4.000₺</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Sweatshirt</td>
+                        <td>Zara</td>
+                        <td>Üst Giyim</td>
+                        <td>4.500₺</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

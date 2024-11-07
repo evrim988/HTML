@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        div{
+            margin-bottom: 5px;
+        }
+        label{
+            display: block;
+            margin-bottom: 3px;
+            font-weight: bolder;
+        }
+        input{
+            width: 160px;
+            padding: 5px;
+        }
+        form{
+            margin-left: 600px;
+            margin-top: 160px;
+        }
+        button{
+            height: 30px;
+            width: 160px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    required etiketi -> kullanıcıdan inputlara doğru bir şekilde veri girmesini sağlar. Boş girememe, email formatında girme vs.
+    -->
+    <form action="http://localhost:9090/v1/dev/user/register" method="post">
+        <h1 style="font-weight: bolder;">Kullanıcı Kayıt Formu</h1>
+        <div>
+            <label for="name">Adınız:</label>
+            <input type="text" name="name" required>
+        </div>
+        <div>
+            <label for="surname">Soyadınız:</label>
+            <input type="text" name="surname" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+        </div>
+        <div>
+            <label for="username">Kullanıcı Adınız:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div>
+            <label for="password">Şifreniz:</label>
+            <input type="password" name="password" required>
+        </div>
+        <div>
+            <button type="submit">Kayıt Ol</button>
+        </div>
+    </form>
+</body>
+</html>

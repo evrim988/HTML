@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form bileşenleri</title>
+    <!--
+    label -> tüm label etiketlerinin genişliklerini 200px ayarladık.
+    input -> tüm input etiketlerinin genişliklerini 250px ve yüksekliğini 30px yaptık.
+    div -> tüm div etiketlerinin alt kısmından 5 px boşluk bırak demiş olduk. 
+    -->
+    <style>
+        label{
+            display: inline-block;
+            width: 200px;
+        }
+        input{
+            display: inline-block;
+            width: 250px;
+            height: 30px;
+        }
+        div{
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" style="text-align: center; color: maroon;">
+        <h1>Form Bileşenleri - Kullanıcı Bilgi Girişleri</h1>
+    </div>
+    <!--
+    input type -> input bileşeninin türünü belirtir.
+    türler: text, radio, password, email, tel, checkbox vs.
+    input name -> form bileşeninin ilgili endpointe bilgi iletirken
+    değişken adı olarak kullanılır.
+    input id -> bu tag in benzersiz numarası.(javascript üzerinden document.getElementById('') şeklinde kullanımı vardır.Inputa bu şekilde erişiriz.)
+    label for -> ilgili bileşeni işaret ettiğini belirtmek için kullanılır. gerekli değildir.
+    -->
+    <!--
+    inline element: sadece kendi hacimleri kadar yer kaplarlar ve kendilerinden sonra gelen elemente bitişik şekilde görünürler.
+    block element: bulundukları satırın tamamını kaplarlar.
+    inline-block element: her iki türde de davranabilen elementlerdir.
+    -->
+    <div id="body">
+        <div>
+            <label for="name">Adınız ve Soyadınız:</label>
+            <input type="text" name="adsoyad" id="name">
+        </div>
+        <div>
+            <label for="email">Email Adresiniz:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="username">Kullanıcı Adınız:</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div>
+            <label for="password">Şifreniz:</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div>
+            <label style="font-weight: bolder;">İlgi Alanlarınız:</label><br>
+            <input type="checkbox"><label>Yüzme</label><br>
+            <input type="checkbox"><label>Kitap Okumak</label><br>
+            <input type="checkbox"><label>Yazılım</label><br>
+            <input type="checkbox"><label>Sinema</label><br>
+        </div>
+        <div>
+            <label style="font-weight: bolder;">Hangi yazılım dilini seviyorsun?</label><br>
+            <input type="radio" name="yd" id="yd1"><label>Java</label><br>
+            <input type="radio" name="yd" id="yd2"><label>C#</label><br>
+            <input type="radio" name="yd" id="yd3"><label>Php</label><br>
+            <input type="radio" name="yd" id="yd4"><label>Go</label><br>
+        </div>
+        <div>
+            <label style="font-weight: bolder;">Hangi ilde yaşıyorsun?</label><br>
+            <select style="margin-top: 15px; margin-left: 120px; width: 220px; height: 30px;">
+                <option>Seçiniz</option>
+                <option value="34">İstanbul</option>
+                <option value="16">Bursa</option>
+                <option value="35">İzmir</option>
+            </select>
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/200" alt="doğa manzarası resmi">
+        </div>
+        <div>
+            <input type="file" name="dosya" id="dosya">
+        </div>
+        <div>
+            <button type="submit">Kaydet</button>
+        </div>
+    </div>
+</body>
+</html>

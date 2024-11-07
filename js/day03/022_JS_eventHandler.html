@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="islemYap()">Bunu Tıkla</button> <br><br>
+    <label id="yazi">Burada bir şeyler yazmalısın.</label>
+
+    <script>
+        function islemYap(){
+            console.log('Buton tıklandı.');
+        }
+
+        const labelYazi = document.getElementById('yazi');
+        
+        //label a tıkladığımızda yazının rengini kırmızı yapar.
+        labelYazi.addEventListener('click', yaziRengi);
+
+        //label ın üzerine geldiğimde yazının rengi kırmızı olur.
+        labelYazi.addEventListener('mouseover', yaziRengi);
+        
+        //label ın üzerinden mause çektiğimde yazının rengi siyah olur.
+        labelYazi.addEventListener('mouseleave', yaziRengiSil);
+
+        labelYazi.addEventListener('click', yaziyiBuyut);
+        
+        function yaziRengi(){
+            labelYazi.style.color = 'red';
+        }
+
+        function yaziRengiSil(){
+            labelYazi.style.color = 'black';
+        }
+
+        let size = 14;
+        function yaziyiBuyut(){
+            size++;
+            labelYazi.style.fontSize = size + 'px';
+        }
+    </script>
+</body>
+</html>

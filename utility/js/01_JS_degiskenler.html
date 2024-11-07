@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişkenler</title>
+</head>
+<body>
+    <h1>Javascript Değişkenler</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit enim non perferendis, saepe dignissimos aut fuga tempora voluptates iusto modi totam, alias tempore nisi quas iste reiciendis consequuntur nemo esse!</p>
+
+    <script>
+
+        /**
+         * Bir web sitesinde ekrana çıktı vermek için;
+         * console.log('merhaba');
+         * 
+         * Javascript de değişken tanımlama
+         * değişken tanımlamak için var, let, const tanımlarını kullanırız.
+         * Örneğin;
+         * int sayi = 4; şeklinde bir tanım yapamayız.
+         * bunun yerine -> var sayi = 4; dersek doğru bir kullanım olacaktır.
+         * 
+         * Değişken tanımlama kuralları;
+         * Javascript type safe bir dil değildir. Yani tip güvenliği yoktur. Burada kast edilen şey bir değişken belli türde tanımlanamaz.
+         * 
+         * javada değişken tanımlama -> int sayi = 4;
+         * aynı zamanda java -> sayi = 'evrim' gibi bir kullanım yapamayız. Çünkü tip güvenliği vardır.
+         * 
+         * Javascript de var sayi = 5;
+         * sayi = 'evrim'; şeklinde kullanabiliriz. Çünkü tip güvenliği yoktur.
+        */
+
+        console.log('merhaba');
+        var sayi = 4;
+        console.log('değişken değeri...: ' + sayi); //ifade ve sayı birleştirilir.
+        console.log('değişken değeri...: ', sayi); //ifade ayrı sayı ayrı çıktılanır.
+
+        //mesela bir müşteri oluşturalım.
+        var musteri = {
+            ad: 'evrim',
+            adres: 'bursa'
+        };
+        console.log('musteri' + musteri); // böyle yazdığımda [object Object] bu şekilde bir çıktı alırız.
+        console.log('musteri', musteri); // müşteri nesnesinin içeriğini gösterir.
+        
+        //const değer atamalarında sonradan değeri değiştirilemiyor.
+        //sabit değişkenler kullanılır.
+        const adres = 'Ankara';
+       // adres = 'izmir'; 
+
+        /* kullanıcıdan bilgi alıp direk konsol ekranına yazdırmış oldum.*/
+       // let ad = prompt('lütfen adınızı giriniz');
+       // console.log('adınız...: ', ad);
+        
+        /*bir hata oluştuğunda kullanıcıya bilgi vermek için console değil alert kullanılır.*/
+       // alert('Beklenmeyen bir hata oluştu.')
+       
+    </script>
+</body>
+</html>

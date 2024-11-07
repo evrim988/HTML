@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * ürün objesi
+        * id number
+        * ad string
+        * açıklama string
+        * fiyat number
+        * stok number
+        * kategori object 
+        */
+
+        let productList = {
+            id: 1,
+            ad: 'iPhone 16 pro',
+            aciklama: 'Yeni çıkan...',
+            fiyat: 50,
+            stok: 100,
+            kategori: {
+                id: 1,
+                ad: 'Telefon',
+                parentId: 0
+            },
+
+            id: 2,
+            ad: 'iPhone 16 pro max',
+            aciklama: 'Yeni çıkan...',
+            fiyat: 100,
+            stok: 100,
+            kategori: {
+                id: 2,
+                ad: 'Telefon',
+                parentId: 0
+            }
+        }
+
+        console.log('ürün listesi...: ', productList);
+        console.log('ürün listesi...: ', productList.ad);
+        
+        let result = {
+            code: 200,
+            size: 50,
+            page: 1,
+            message: 'ürün listeleme işlemi başarılı...',
+            data: [
+                {
+                    id: 1,
+                    ad: 'Anakart',
+                    url: 'https://',
+                    picture: 'https://picsum.photos/200/200'
+                },
+                {
+                    id: 2,
+                    ad: 'Anakart',
+                    url: 'https://',
+                    picture: 'https://picsum.photos/200/200'
+                },
+                {
+                    id: 3,
+                    ad: 'Anakart',
+                    url: 'https://',
+                    picture: 'https://picsum.photos/200/200'
+                }
+            ]
+        }
+        console.log(result);
+        console.log(result.data);
+        console.log(result.data[1].ad);
+        
+
+    </script>
+</body>
+</html>

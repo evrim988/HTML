@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döngüler</title>
+</head>
+<body>
+    
+    <!--Javascript ile liste kullanımı-->
+    <ol id="list"></ol>
+
+    <script>
+
+        let isimListesi = ['Ahmet', 'Deniz', 'Selim', 'Elif', 'Türkan'];
+
+        //id si list olan elementi seçmiş olup bir değişkene atadık.
+        const oList = document.getElementById('list');
+       // console.log(oList); //<ol id="list"></ol> böyle çıktı vermiş olur.
+        
+       //isimListesi dizisinin uzunluğu kadar dçngüde kalıyoruz.
+       for (let i = 0; i < isimListesi.length; i++) {
+            console.log(isimListesi[i]); //dizinin uzunluğu kadar her bir elemanı consola çıktı olarak vermiş oluruz.
+            
+            //şimdi bu isimleri listeye aktarmka istiyorum.
+            oList.innerHTML += '<li>' + isimListesi[i] + '</li>';
+            oList.setAttribute('style', 'color: red; border: 1px green solid');
+       }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css İle Div Kullanımı</title>
+    <style>
+        div{
+            /*border -> bir bileşenin dört çevresinde bulunan kenarları birleştiren, kenarlığı ifade eder.*/
+            border: 1px blueviolet solid;
+            
+            /*margin -> bir elementin dış çeğerlerinden uzaklıklarına verilen addır.*/
+            margin: 5px;
+            
+            /*padding -> bir bileşenin kendi içerisindeki bileşenlere olan uzaklığını ifade eder.*/
+            padding: 5px;
+            /* !!padding ilgili bileşenin hacminin artmasına neden olur. Bu nedenler sayfa yapısının oranını bozabilir.
+                 Kullanırken hesaba katılması gerekebilir.*/
+        }
+        .bilgi-formu{
+            /*input'a padding verdikçe genişler ancak içerdeki text kısmı sabit kalır.*/
+            padding: 5px;
+        }
+        .makale{
+            border: 2px green solid;
+            width: 400px;
+            overflow: scroll; /*bu yöntemle paragraf sığmayan yerleri kaydırma çubuğu aşağı yukarı kaydırarak paragrafı rahatlıkla okuyabiliriz.*/
+            height: 300px;
+        }
+        .kutu{
+            width: 100px;
+            height: 200px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input class="bilgi-formu" type="text">
+    </div>
+    <div>
+        <label>Muhammet Hoca İle ReactJS Eğitimi</label>
+    </div>
+    <div>
+        <label>Konu ve İçeriklerin Tam Listesi</label>
+    </div>
+    <div class="makale">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, velit voluptatem aspernatur, eius ab in quaerat nihil, nemo doloribus quam eaque amet pariatur. Tempora officia, fugiat nostrum officiis iure impedit.
+        </p>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta optio dolores atque facilis eos minus pariatur, maxime sequi, a ad nostrum suscipit rerum numquam nam! Saepe ab explicabo placeat facere.
+            Quos tenetur maxime possimus iusto et quod dolor quae quasi dolorum? Suscipit, mollitia voluptates facere ex odit natus quasi, inventore fugit soluta eligendi quod itaque adipisci, reprehenderit voluptate expedita. Doloremque!
+        </p>
+    </div>
+    <div>
+        <button type="button">Çıkış Yap</button>
+    </div>
+    <div>
+        <div class="kutu"></div>
+    </div>
+</body>
+</html>

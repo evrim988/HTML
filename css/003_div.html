@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    margin: bir elementin dış çeperlerinden olan uzaklıklarına verilen addır. [left, right, top, bottom]
+    border: bir bileşenin dört çevresinde bulunan kenarları birleştiren kenarlığı ifade eder, 
+    ayrı ayrı manipüle edilebilir.
+    padding: bir bileşenin kendi içerisindeki bileşenlere olan uzaklığını ifade eder.
+    !!padding ilgili bileşenin hacminin artmasına neden olur. Bu nedenler sayfa yapısının oranını bozabilir.
+    Kullanırken hesaba katılması gerekebilir.
+    -->
+    <style>
+        div{
+            border: 1px red solid;
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .kutu{
+            width: 100px;
+            height: 200px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .bilgi-formu{
+            padding: 5px;
+            width: 65%;
+        }
+        .makale-box{
+            border: 2px green dotted;
+            width: 400px;
+            overflow: scroll;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <input class="bilgi-formu" type="text" name="" id="">
+    </div>
+    <div class="div2">
+        <label>Muhammet Hoca İle ReactJS</label>
+    </div>
+    <div>
+        <label>Konu ve İçeriklerin Tam Listesi</label>
+    </div>
+    <div class="makale-box">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga aut voluptatem maiores incidunt et animi fugiat deserunt harum commodi, rem repellendus. Cumque distinctio est alias accusantium, optio consequuntur iste nemo.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur id aperiam incidunt omnis ad quae harum laboriosam illo expedita vitae, voluptas distinctio dignissimos illum facilis accusantium. Reiciendis sequi saepe doloribus.
+            Perferendis autem nesciunt natus tempora praesentium doloremque quo fugit, aspernatur pariatur repellendus, officia hic architecto impedit nobis similique distinctio, consequuntur sint. Libero omnis qui quae ratione in id similique debitis.
+            Est amet maxime excepturi, suscipit dolor quod cumque id voluptatem. Rem dolorem omnis voluptates earum atque, assumenda aliquam harum dolores totam? Voluptatibus nesciunt id amet corrupti eligendi perspiciatis ullam! Neque.
+        </p>
+    </div>
+    <div>
+        <button type="button">Buradan Çık</button>
+    </div>
+    <br><br>
+
+    <div class="kutu"></div>
+</body>
+</html>

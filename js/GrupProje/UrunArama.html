@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urun Arama</title>
+    <style>
+        .container{
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            border-radius: 10px;
+           
+        }
+        .header{
+            display: flex;
+            flex-direction: row;
+            border: 1px solid blue;
+            height: 10vh;
+            margin: 10px;
+            border-radius: 10px;
+            align-items: center;
+        }
+        .urun-ara{
+            min-height: 5vh ;
+            margin: 10px;
+            border-radius: 10px;
+            flex: 9;
+        }
+        .urun-btn{
+            min-height: 5vh;
+            flex: 3;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: chocolate;
+            color: wheat;
+        }
+        .urun-btn:active{
+            background-color: rgb(243, 164, 107);
+        }
+        .body{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border: 1px solid blueviolet;
+            margin: 10px;
+            flex: 12;
+            height: 70vh;
+            border-radius: 10px;
+            overflow: scroll;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;           
+            border: 1px solid green;
+            height: 45vh;
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            flex: 3;
+        }
+        .urun-thumbnail{                    
+            border: 2px solid black;
+            height: 15vh;
+            margin: 5px;
+            border-radius: 5px;           
+        }
+        .card:hover{
+            box-shadow: 6px 6px 15px 6px rgba(0, 0, 0, 0.75);
+        }
+        .card:active{
+            
+        }
+        .urun-resmi{
+            border-radius: 5px;
+            height: 15vh;           
+            text-align: center;
+            width: 60%;
+            margin-left: 20%;
+        }
+        #urun-title{           
+            font-weight: bold;
+        }
+        #urun-price{
+            margin-left: 125px;
+        }
+        .lbl-urun-ozellik{
+            margin-top: 5px;
+        }
+        .line{
+            border: 1px solid black;
+        }
+        .comment{
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">            
+                <input class="urun-ara" type="text" id="urun-ara" placeholder="Aranacak ürünün ismini giriniz">  
+                <button onclick="urunAra()" class="urun-btn">Ara</button>                       
+        </div>
+        <div class="body" id="body">
+            
+        </div>
+    </div>
+    <script>
+        const arama=document.getElementById('urun-ara');
+        const body=document.getElementById('body');
+        function urunAra(){          
+        fetch('https://dummyjson.com/products/search?q='+arama.value)
+        .then(res => res.json())
+        .then(data=>{
+            body.innerHTML='';           
+            data.products.forEach(product => {            
+            body.innerHTML+=`
+            <div class="card" onclick="urunDetay(${product.id})">                           
+                <div class="urun-thumbnail">
+                    <img class="urun-resmi" src="${product.thumbnail}" alt="">
+                    <div class="lbl-urun-ozellik">
+                        <label id="urun-title">${product.title}</label>
+                    </div>                    
+                    <div class="lbl-urun-ozellik">
+                        <label id="urun-description">${product.description}</label>
+                    </div>                   
+                    <div class="lbl-urun-ozellik">
+                        <label id="urun-price"><span>$</span>${product.price}</label>
+                    </div>
+                    <div class="line"></div>
+                    <div class="author-name">
+                        <label id="author-name">${product.reviews[0].reviewerName}</label>
+                    </div>
+                    <div class="comment">
+                        <label id="comment">${product.reviews[0].comment}</label>
+                    </div>
+                </div>
+            </div>
+            `;
+        })
+        }
+        
+            
+        );
+        }
+        function urunDetay(urunId){
+            window.location.href="UrunDetay.html?urunId="+urunId;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .buttons {
+            margin: 5px;
+            padding: 2px 5px;
+        }
+
+        #root {
+            border: 2px green solid;
+            height: 85vh;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+        <button onclick="elementEkle('TEXT')" type="button">input text ekle</button>
+        <button onclick="elementEkle('IMG')" type="button">image ekle</button>
+        <button onclick="elementEkle('BTN')" type="button">button ekle</button>
+
+
+    </div>
+    <div id="root"></div>
+
+    <script>
+
+        function elementEkle(neyiEkleyeyim) {
+            let newElement;
+
+            switch (neyiEkleyeyim) {
+                case 'TEXT':
+                    //input ekle tetiklendiğinde yeni bir input oluşturur.
+                    newElement = document.createElement('input');
+                    //input type text olsun.
+                    newElement.setAttribute('type','text'); 
+                    //placeholder ekleyelim.
+                    newElement.setAttribute('placeholder','lütfen adınızı giriniz...');
+                    //css özellikleri ekleyelim.
+                    newElement.setAttribute('style','display: inline-block; width: 90%; color: blue; margin: 5px;')
+                    break;
+
+                case 'IMG':
+                    //yeni bir img elementi oluşturalım.
+                    newElement = document.createElement('img');
+                    //img nin resim kaynağını oluşturalım.
+                    newElement.setAttribute('src','https://picsum.photos/150/150');
+                    newElement.setAttribute('style','border-radius: 50%; margin: 5px;');
+                    break;
+
+                case 'BTN':
+                    //yeni bir button oluşturalım.
+                    newElement = document.createElement('button');
+                    //buton içerisine yazı ekleyelim.
+                    newElement.innerText = 'Yeni Bir Buton';
+                    newElement.setAttribute('style','padding: 5px; color: red; margin: 5px;')
+                    break;
+                default:
+                    alert('Geçersiz seçim');
+                    break;
+            }
+
+            const root = document.getElementById('root');
+            root.appendChild(newElement);
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{
+        border: 1px red solid;
+        width: 60%;
+        height: 90vh;
+        margin-left: 20%;
+        overflow: scroll;
+    }
+    .post{
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+    }
+    .avatar{
+        flex: 1;
+    }
+    .body{
+        flex: 11;
+        flex-direction: column;
+        margin-left: 5px;
+    }
+    .avatar-img{
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+    }
+    .post-title{
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .post-body{
+        font-size: 13px;
+    }
+    .post-icons{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+    }
+    .p-icon{
+        display: flex;
+        flex: 1;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+     
+    }
+    span{
+        margin-left: 5px;
+        font-size: 13px;
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div class="container" id="root">
+        <!--Post Start-->
+        <div class="post">
+            <div class="avatar">
+                <img class="avatar-img" src="https://picsum.photos/100/100" alt="">
+            </div>
+            <div class="body">
+                <div>
+                    <label class="post-title">Başlık kısmı burası</label>
+                </div>
+                <div>
+                    <label class="post-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt, numquam suscipit expedita nihil voluptas dicta? Sapiente nam maxime eaque, quo neque illo fugiat qui ab molestiae error est tenetur?</label>
+                </div>
+                <div class="post-icons">
+                    <div class="p-icon">
+                        <i class="fa-regular fa-comments"><span>56</span></i>
+                    </div>
+                    <div class="p-icon">
+                        <i class="fa-solid fa-retweet"><span>1B</span></i>
+                    </div>
+                    <div class="p-icon">
+                        <i class="fa-regular fa-heart"><span>5.4B</span></i>
+                    </div>
+                    <div class="p-icon">
+                        <i class="fa-solid fa-eye"><span>1mn</span></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Post End-->
+    </div>
+
+    <script>
+
+        const root = document.getElementById('root')
+        fetch('https://dummyjson.com/posts')
+        .then(res => res.json())
+        .then(data => {
+            root.innerHTML = '';
+            data.posts.forEach(post => {
+                root.innerHTML += `
+                      <!--Post Start-->
+                <div class="post">
+                     <div class="avatar">
+                        <img class="avatar-img" src="https://picsum.photos/100/100" alt="">
+                    </div>
+                    <div class="body">
+                        <div>
+                             <label class="post-title">${post.title}</label>
+                        </div>
+                         <div>
+                             <label class="post-body">${post.body}</label>
+                        </div>
+                        <div class="post-icons">
+                             <div class="p-icon">
+                                 <i class="fa-regular fa-heart"><span>${post.reactions.likes}</span></i>
+                            </div>
+                            <div class="p-icon">
+                                <i class="fa-regular fa-thumbs-down"><span>${post.reactions.dislikes}</span></i>
+                            </div>
+                            <div class="p-icon">
+                                <i class="fa-solid fa-eye"><span>${post.views}</span></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Post End-->
+                `;
+            })
+        })
+
+    </script>
+</body>
+</html>

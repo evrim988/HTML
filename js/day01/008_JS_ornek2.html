@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            id: 5,
+            username: 'evrim',
+            avatar: 'https://',
+            name: 'Evrim Çalışkan'
+        }
+
+        let loginUser = {
+            code: 200,
+            data: '',
+            message: '',
+            success: false
+        }
+        console.log('login code...: ', loginUser.code);
+        
+        //js da ajax la aynı bana göre ancak bu kısmı daha sonra bakacağız.
+
+        fetch('http://localhost:9090/user/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: 'evrim98',
+                password: '12345a'
+            })
+        }).then(data => data.json()).then(result=> console.log(result));
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+       
+    </div>
+
+    <script>
+        //createElement kullanmadan root içerisine bu şekilde bir ekleme işlemi de yapabiliriz.
+        const root = document.getElementById('root');
+        root.innerHTML += '<h1> Muhammet Hoca </h1> <button>Yeni Kayıt</button>'
+
+        root.innerHTML += `
+        <br><br>
+         <label>Adınız:</label>
+        <input type="text"><br> <br>
+        <label>Soyadınız:</label>
+        <input type="text"><br> <br>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döngüler</title>
+</head>
+
+<body>
+
+    <ol id="list">
+
+    </ol>
+
+    <script>
+
+        /*
+        * Döngüler;
+        * for loop, while loop...
+        * 
+        */
+
+        let isimListesi = ['Muahmmet', 'Demet', 'Emin', 'Canan', 'Türkan']
+
+        const oList = document.getElementById('list');
+        //list id sine sahip ol etiketini seçtik ve bunu değişkene atadık.
+        //daha sonra isimListesi olan dizimizin uzunluğu kadar içerisinde döndük.
+        //her bir elemanı önce konsola yazdırdı.
+        //daha sonra li etiketi açıp dizinin her bir elemanı listenin içerisine ekledik.
+        //listeye setAttribute diyerek bir özellik ekleyebiliyoruz.
+        for (let i = 0; i < isimListesi.length; i++) {
+            console.log(isimListesi[i]);
+            oList.innerHTML += '<li style="margin:5px; background-color: yellow">' 
+                + isimListesi[i] + '</li>';
+            oList.setAttribute('style', 'color:red; border: 1px green solid')
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            border: 2px red solid;
+            height: 90vh;
+        }
+        .column{
+            display: flex;
+            margin: 15px;
+            border-radius: 10px;
+        }
+        .row{
+            border: 1px green solid;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .label{
+            margin-left: 40%;
+            
+        }
+        .colon{
+            border: 1px red solid;
+            margin: 5%;
+            align-items: center;
+        }
+        .circle{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: blueviolet;
+        }
+        .height-200{
+            height: 800px;
+        }
+        .height-500{
+            height: 500px;
+        }
+        .col-4{
+            flex: 4; 
+            border: 1px blue solid;
+        }
+        .col-8{
+            flex: 8;
+            flex-direction: column;
+        }
+        .mb-8{
+            margin-bottom: 8px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column col-4"></div>
+        <div class="column col-8 height-800">
+            <div class="row  mb-8">
+                <label class="label">FLEX DİRECTION</label>
+            </div>
+            <div class="row height-500">
+                <div class="colon"></div>
+                <div class="colon"></div>
+            </div>
+            
+        </div>
+    
+    </div>
+</body>
+</html>

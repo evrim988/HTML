@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koşullar</title>
+    <style>
+        div{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--kullanıcıdan ad bilgisi alalım ve girilen ad bilgisini 
+    belirli karakter aralığında olup olmadığını kontrol edip ona göre işlemlere devam edelim.-->
+    <div>
+        <div>
+            <label for="ad">Adınızı Giriniz:</label>
+        </div>
+        <div>
+            <input type="text" name="ad" id="ad">
+        </div>
+        <div>
+            <button onclick="testEt()">Test Et</button>
+        </div>
+    </div>
+
+    <label>----------------Kullanıcı Kayıt Formu-------------------------</label>
+
+    <div>
+        <div>
+            <label for="ad">Adınızı Giriniz:</label>
+        </div>
+        <div>
+            <input type="text" name="ad" id="ad2" required>
+        </div>
+        <div>
+            <label for="soyad">Soyadınızı Giriniz:</label>
+        </div>
+        <div>
+            <input type="text" name="soyad" id="soyad" required>
+        </div>
+        <div>
+            <label for="username">Kullanıcı Adınız:</label>
+        </div>
+        <div>
+            <input type="text" name="username" id="username" required>
+        </div>
+        <div>
+            <label for="password">Parolanızı Giriniz:</label>
+        </div>
+        <div>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+            <label for="repassword">Parolanızı yeniden giriniz: </label>
+        </div>
+        <div>
+            <input type="password" id="repassword" required>
+        </div>
+        <div>
+            <button onclick="validationInform()">Kayıt Ol</button>
+        </div>
+    </div>
+    
+    <script>
+        /**
+         * Javascript Koşul Türleri
+         * if(condition)
+         * if()...else
+         * if()...else if().. else
+         * 
+         * switch(value)
+         *  case A: break;
+         *  case B: break;
+         *  default: break;
+         * 
+         * 
+         * kullanıcıdan ad bilgisi alalım ve girilen ad bilgisini 
+         * belirli karakter aralığında olup olmadığını kontrol edip kullanıcıya bilgi verelim.
+        */
+
+        function testEt() {
+            const ad = document.getElementById('ad').value;
+            if(ad.length <= 3 || ad.length > 64)
+                alert('lutfen 3-64 karakter arasında bir ad giriniz.');
+        }
+
+        //kayıt olmak için bilgileri bu metoddan kontrol ediyorum
+        function validationInform(){
+            const ad = document.getElementById('ad2').value;
+            const soyad = document.getElementById('soyad').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const repassword = document.getElementById('repassword').value;
+
+            //ad karakteri 2 karakterden kısa veya 25 karakterden fazla olmasın.
+            if(ad.length < 2 || ad.length > 25)
+                alert('lutfen 2-25 karakter arasında bir ad giriniz...');
+
+            //kullanıcı adı 2 karakterden kısa veya 15 karakterden fazla olmasın.
+            if(username.length < 2 || username.length > 30)
+                alert('Kullanıcı adınız 2-25 karakter aralığında olmalıdır.');
+
+            //girilen iki şifrenin uzunluğu birbirine eşit değilse şifreler uyuşmamaktadır hatası versin.
+            if(!(password.length == repassword.length))
+                alert('Şifreler birbiri ile uyuşmamaktadır.');
+
+            //girilen iki şifre uzunluğu aynı fakat aynı değilse şifreler farklı şeklinde hata versin
+            if(!(password === repassword))
+               alert('Şifreler birbirinden farklıdır.');
+        }
+    </script>
+</body>
+</html>

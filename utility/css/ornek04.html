@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Css Kullanımı</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        /*başlık ve içeriğin etrafını çizer.(Ayrı ayrı)*/
+        th,td{
+            border: 1px blueviolet solid;
+        }
+        td{
+            /*yazı ortada kaldı ve dört bir yanından çerçeve genişledi.*/
+            padding: 3px;
+            text-align: center;
+        }
+        th{
+            padding: 5px;
+            background-color: blueviolet;
+        }
+        /*zebra desen*/
+        tr:nth-child(even){
+            background-color: rgb(222, 188, 254);
+        }
+        tr:hover{
+            background-color: rgb(177, 103, 246);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Evrim</td>
+                <td>Çalışkan</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Kadriye</td>
+                <td>Çalışkan</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Serdar</td>
+                <td>Çalışkan</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ahmet</td>
+                <td>Demir</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Aslı</td>
+                <td>İçöz</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

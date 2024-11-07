@@ -1,0 +1,66 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişkenler</title>
+</head>
+<body>
+    <h1>JS Değişkenler</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque commodi maiores harum. Ratione ducimus vitae dolor ipsa amet cumque qui debitis sed molestias aliquam, laudantium hic tenetur, repudiandae laborum minima.</p>
+    <script>
+        /*
+        * IO
+        * console.log('merhaba'); -> web sitesinde console ekranına çıktı vermek için kullanılıyor.
+        * JavaScript type safe bir dil değildir. Yani tip güvenliği yoktur. Burada kast edilen şey bir değişken belli türde tanımlamanaz.
+        * javada int sayi = 5; 
+        * java sayi = "muhammet hoca" diyemeyiz. tip güvenliği vardır.
+        * JS var sayi = 5;
+        * JS sayi = 'muhammet hoca' diyebiliyoruz. tip güvenliği yoktur.
+        * 
+        * !!Özetle type safety, derleyicilerin kodu derlerken değişkenlerimizin tipleri ile 
+        * atanan değerlerin tipleri arasında farklılık olması durumunda hata vermesi ve kodu derlememesidir. 
+        * Tip validasyonu yapmasıdır.
+        * 
+        * JS datatypes
+        * var, let, const
+        */
+       console.log('merhaba');
+
+       //int sayi = 4; şeklinde bir tanım kullanamayız. (var, let, const)
+       var sayi = 4;
+       console.log('değişken değeri...: ' + sayi); //ifade ve sayı birleştirilir.
+       console.log("değişken değeri...: " + sayi);
+       console.log('değişken değeri...: ', sayi); //ifade ayrı sayı ayrı çıktılanır.
+      
+       var musteri = {
+            ad: 'evrim',
+            adres: 'bursa'
+       };
+       console.log('musteri' + musteri); 
+       console.log('musteri', musteri); //müşterinin içeriğini gösterir.
+
+       const adres = 'Ankara';
+       /*
+       NOT!! bir html sayfası java uygulaması gibi hata vermez.
+       hata html sayfasının yüklenmemesi şeklinde tezahür eder.
+       */
+      // adres = 'İzmir';
+
+      //let ad = prompt('lütfen adınızı giriniz')
+      // console.log('adınız...: ' , ad);
+
+      /*
+      * ad -> null - null pointer exception
+      * ad -> "" - isEmpty
+      * ad -> " " - isBlank
+      * ad -> "muhammet"
+      * --- undefined
+      */
+       
+     /*kullnacıya bilgi verirken alert kullanırız.*/
+     //alert('Dikkat beklenmeyen durum oluştu.');
+
+
+    </script>
+</body>
+</html>

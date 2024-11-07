@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="user-list"></ul>
+
+    <script>
+
+        let userList = ['Mr. Alex Jackson', 'Bay Erdem Teneke'];
+        const ulUserList = document.getElementById('user-list');
+
+        ulUserList.innerHTML += '<li>' + userList[0] + '</li>';
+        ulUserList.innerHTML += '<li>' + userList[1] + '</li>';
+
+        //şimdi istek atalım ve istek sonucunu listeye aktaralım.
+        fetch('https://randomuser.me/api/?results=5')
+            .then(data => data.json())
+            .then(res => {
+                console.log(res.results[0].name);
+                
+                for (let i = 0; i < res.results.length; i++) {
+                    ulUserList.innerHTML +=
+                        '<li>' +
+                        res.results[i].name.title + ' ' +
+                        res.results[i].name.first + ' ' +
+                        res.results[i].name.last +
+                        '</li>';
+                }
+
+            })
+
+    </script>
+</body>
+
+</html>
